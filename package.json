@@ -1,0 +1,68 @@
+{
+  "name": "bici",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.9.0",
+    "react-native": "0.61.2",
+    "react-native-device-info": "^5.3.0",
+    "react-native-gesture-handler": "^1.4.1",
+    "react-native-maps": "0.26.1",
+    "react-native-reanimated": "^1.4.0",
+    "react-navigation": "^4.0.10",
+    "react-navigation-drawer": "^2.3.3",
+    "react-navigation-stack": "^1.10.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/runtime": "^7.5.0",
+    "@react-native-community/eslint-config": "^0.0.3",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@types/jest": "^24.0.19",
+    "@types/react": "^16.9.11",
+    "@types/react-native": "^0.60.21",
+    "@types/react-test-renderer": "^16.9.1",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0",
+    "jest-extended": "^0.11.2",
+    "metro-react-native-babel-preset": "^0.51.1",
+    "react-native-typescript-transformer": "^1.2.13",
+    "react-test-renderer": "16.8.1",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.4"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testEnvironment": "jsdom",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-navigation|react-navigation-redux-helpers|@react-navigation/.*)"
+    ],
+    "setupFiles": [
+      "./__mocks__/react-native.tsx"
+    ],
+    "cacheDirectory": ".jest/cache",
+    "setupFilesAfterEnv": [
+      "jest-extended"
+    ]
+  }
+}
