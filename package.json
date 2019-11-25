@@ -6,7 +6,10 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "pack-secrets": "./secrets-scripts/pack-secrets.sh",
+    "unpack-secrets": "./secrets-scripts/unpack-secrets.sh",
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "react": "16.9.0",
