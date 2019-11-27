@@ -174,7 +174,7 @@ platform :ios do
       match(
         shallow_clone: true,
         clone_branch_directly: true,
-        readonly: true
+        readonly: false
       )
       build
       if ENV['DEPLOYMENT_PLATFORM'] === 'hockeyapp' then
