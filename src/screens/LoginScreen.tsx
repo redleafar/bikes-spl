@@ -178,6 +178,7 @@ function loginRequest(email: string, password: string, screen: React.Component<P
   .then((responseJson) => {
     alert(responseJson);
     screen.setState({ showIndicator: false });
+    screen.props.navigation.navigate('Map');    
   })
   .catch((error) => {
     alert(error);

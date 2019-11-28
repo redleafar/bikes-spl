@@ -13,9 +13,10 @@ import colors from "../config/colors";
 import strings from "../config/strings";
 import constants from "../config/constants";
 import App from "../../App";
+import { NavigationScreenProp } from 'react-navigation';
 
 interface Props {
-
+  navigation: NavigationScreenProp<any,any>;
 }
 
 interface State {
@@ -32,7 +33,7 @@ interface State {
   showIndicator: boolean;
 }
 
-class RegisterScreen extends React.Component<{}, Props, State> {  
+class RegisterScreen extends React.Component<Props, State> {  
   static navigationOptions = {    
     title: strings.REGISTER_SCREEN_TITLE,    
     /* drawerIcon: ({ tintColor }) => (
@@ -270,7 +271,7 @@ function registerRequest(
     phone:string, 
     address:string, 
     company:string, 
-    screen: React.Component<{}, Props, State>
+    screen: React.Component<Props, State>
   ) {  
   fetch('https://bikes-spl-bicibogo.herokuapp.com/registro', {
     method: 'POST',
@@ -295,22 +296,11 @@ function registerRequest(
   .then((responseJson) => {
     alert(responseJson);
     screen.setState({ showIndicator: false });
-    this.props.navigation.navigate('Register')
+    screen.props.navigation.navigate('Register')
   })
   .catch((error) => {
     alert(error);
   });
-}
-
-// Standard variation
-function api<T>(url: string): Promise<T> {
-  return fetch(url)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(response.statusText)
-      }
-      return response.json() as Promise<T>
-    })
 }
 
 export default RegisterScreen;

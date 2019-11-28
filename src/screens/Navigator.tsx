@@ -47,7 +47,7 @@ export default class NavigatorContainer extends React.Component<Props, State> {
     RouteList: RouteListScreen     
   });    
   
-  DrawerStack.navigationOptions = ({ navigation }) => {
+  DrawerStack.navigationOptions = ({navigation} : { navigation : NavigationScreenProp<NavigationState,NavigationParams>}) => {
     const { routeName } = navigation.state.routes[navigation.state.index];
     
     const headerTitle = 
