@@ -262,9 +262,9 @@ platform :android do
   end
 
   lane :build do |options|    
-    build_bicibogo    
-    build_socialbike
-    build_goinbike
+    #build_bicibogo    
+    #build_socialbike
+    #build_goinbike
   end
 
   lane :build_bicibogo do |options|
