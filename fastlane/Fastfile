@@ -262,19 +262,16 @@ platform :android do
   end
 
   lane :build do |options|    
-    set_keys
-    gradle(
-      task: "assembleRelease",
-      project_dir: ENV['ANDROID_PROJECT_DIR']
-    )
-    restore_files
+    build_bicibogo    
+    build_socialbike
+    build_goinbike
   end
 
   lane :build_bicibogo do |options|
     set_keys
     gradle(
       task: "assembleBicibogoRelease",
-      project_dir: ENV['ANDROID_BICIBOGO_PROJECT_DIR']
+      project_dir: ENV['ANDROID_PROJECT_DIR']
     )
     restore_files
   end
@@ -283,7 +280,7 @@ platform :android do
     set_keys
     gradle(
       task: "assembleSocialbikeRelease",
-      project_dir: ENV['ANDROID_SOCIALBIKE_PROJECT_DIR']
+      project_dir: ENV['ANDROID_PROJECT_DIR']
     )
     restore_files
   end
@@ -292,7 +289,7 @@ platform :android do
     set_keys
     gradle(
       task: "assembleGoinbikeRelease",
-      project_dir: ENV['ANDROID_GOINBIKE_PROJECT_DIR']
+      project_dir: ENV['ANDROID_PROJECT_DIR']
     )
     restore_files
   end
