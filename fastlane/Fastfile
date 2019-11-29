@@ -314,7 +314,7 @@ platform :android do
     )
   end
 
-  lane :deploy_hockey do |options|
+  lane :deploy_hockey_goinbike do |options|
     hockey(
       notify: '0',
       apk: ENV['ANDROID_GOINBIKE_APK_PATH']
