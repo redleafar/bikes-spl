@@ -51,7 +51,7 @@ const strings = {
 	
     //Screen titles
     REGISTER_SCREEN_TITLE: "Registro",
-    MAP_SCREEN_TITLE: "Mapa",
+    MAP_SCREEN_TITLE: "Mapa de ruta",
     CONSULT_ROUTE: "Consultar ruta",
 	BIKES_TITLE: "Bicicletas",
 	REGISTER_BIKE_TITLE: "Registrar bicicleta",

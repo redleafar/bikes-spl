@@ -331,7 +331,7 @@ platform :android do
     appcenter_upload(
       api_token: ENV['FL_APPCENTER_API_TOKEN'],
       owner_name: ENV['APPCENTER_USERNAME'],
-      app_name: ENV['ANDROID_BICIBOGO_APPCENTER_APP_ID'],
+      app_name: ENV['ANDROID_APPCENTER_BICIBOGO_APP_ID'],
       apk: ENV['ANDROID_BICIBOGO_APK_PATH'],
       release_notes: %x[#{release_notes_command}]
     )
@@ -341,7 +341,7 @@ platform :android do
     appcenter_upload(
       api_token: ENV['FL_APPCENTER_API_TOKEN'],
       owner_name: ENV['APPCENTER_USERNAME'],
-      app_name: ENV['ANDROID_SOCIALBIKE_APPCENTER_APP_ID'],
+      app_name: ENV['ANDROID_APPCENTER_SOCIALBIKE_APP_ID'],
       apk: ENV['ANDROID_SOCIALBIKE_APK_PATH'],
       release_notes: %x[#{release_notes_command}]
     )
@@ -351,7 +351,7 @@ platform :android do
     appcenter_upload(
       api_token: ENV['FL_APPCENTER_API_TOKEN'],
       owner_name: ENV['APPCENTER_USERNAME'],
-      app_name: ENV['ANDROID_GOINBIKE_APPCENTER_APP_ID'],
+      app_name: ENV['ANDROID_APPCENTER_GOINBIKE_APP_ID'],
       apk: ENV['ANDROID_GOINBIKE_APK_PATH'],
       release_notes: %x[#{release_notes_command}]
     )

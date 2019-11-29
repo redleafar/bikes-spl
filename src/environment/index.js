@@ -1,3 +1,3 @@
 module.exports = {
-  ENV: 'staging',
+  ENV: 'local',
 };
