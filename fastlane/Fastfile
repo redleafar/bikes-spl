@@ -262,9 +262,12 @@ platform :android do
   end
 
   lane :build do |options|    
-    build_bicibogo    
-    build_socialbike
-    build_goinbike
+    set_keys
+    gradle(
+      task: "assembleRelease",
+      project_dir: ENV['ANDROID_PROJECT_DIR']
+    )
+    restore_files
   end
 
   lane :build_bicibogo do |options|
