@@ -108,14 +108,59 @@ fastlane android set_keys
 fastlane android build
 ```
 
+### android build_bicibogo
+```
+fastlane android build_bicibogo
+```
+
+### android build_socialbike
+```
+fastlane android build_socialbike
+```
+
+### android build_goinbike
+```
+fastlane android build_goinbike
+```
+
 ### android deploy_hockey
 ```
 fastlane android deploy_hockey
 ```
 
+### android deploy_hockey_bicibogo
+```
+fastlane android deploy_hockey_bicibogo
+```
+
+### android deploy_hockey_socialbike
+```
+fastlane android deploy_hockey_socialbike
+```
+
+### android deploy_hockey_goinbike
+```
+fastlane android deploy_hockey_goinbike
+```
+
 ### android deploy_to_appcenter
 ```
 fastlane android deploy_to_appcenter
+```
+
+### android deploy_bicibogo_to_appcenter
+```
+fastlane android deploy_bicibogo_to_appcenter
+```
+
+### android deploy_socialbike_to_appcenter
+```
+fastlane android deploy_socialbike_to_appcenter
+```
+
+### android deploy_goinbike_to_appcenter
+```
+fastlane android deploy_goinbike_to_appcenter
 ```
 
 ### android deploy_to_playstore
