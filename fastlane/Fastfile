@@ -261,28 +261,98 @@ platform :android do
     end
   end
 
-  lane :build do |options|
+  lane :build do |options|    
+    build_bicibogo    
+    build_social_bike
+    build_go_in_bike
+  end
+
+  lane :build_bicibogo do |options|
     set_keys
     gradle(
-      task: "assembleRelease",
-      project_dir: ENV['ANDROID_PROJECT_DIR']
+      task: "assembleBicibogoRelease",
+      project_dir: ENV['ANDROID_BICIBOGO_PROJECT_DIR']
+    )
+    restore_files
+  end
+
+  lane :build_socialbike do |options|
+    set_keys
+    gradle(
+      task: "assembleSocialbikeRelease",
+      project_dir: ENV['ANDROID_SOCIALBIKE_PROJECT_DIR']
+    )
+    restore_files
+  end
+
+  lane :build_goinbike do |options|
+    set_keys
+    gradle(
+      task: "assembleGoinbikeRelease",
+      project_dir: ENV['ANDROID_GOINBIKE_PROJECT_DIR']
     )
     restore_files
   end
 
   lane :deploy_hockey do |options|
+    deploy_hockey_bicibogo
+    deploy_hockey_socialbike
+    deploy_hockey_goinbike
+  end
+
+  lane :deploy_hockey_bicibogo do |options|
     hockey(
       notify: '0',
-      apk: ENV['ANDROID_APK_PATH']
+      apk: ENV['ANDROID_BICIBOGO_APK_PATH']
+    )
+  end
+
+  lane :deploy_hockey_socialbike do |options|
+    hockey(
+      notify: '0',
+      apk: ENV['ANDROID_SOCIALBIKE_APK_PATH']
+    )
+  end
+
+  lane :deploy_hockey do |options|
+    hockey(
+      notify: '0',
+      apk: ENV['ANDROID_GOINBIKE_APK_PATH']
     )
   end
 
   lane :deploy_to_appcenter do |options|
+    deploy_bicibogo_to_appcenter
+    deploy_socialbike_to_appcenter
+    deploy_goinbike_to_appcenter
+  end
+
+  lane :deploy_bicibogo_to_appcenter do |options|
     appcenter_upload(
       api_token: ENV['FL_APPCENTER_API_TOKEN'],
       owner_name: ENV['APPCENTER_USERNAME'],
-      app_name: ENV['ANDROID_APPCENTER_APP_ID'],
-      apk: ENV['ANDROID_APK_PATH'],
+      app_name: ENV['ANDROID_BICIBOGO_APPCENTER_APP_ID'],
+      apk: ENV['ANDROID_BICIBOGO_APK_PATH'],
+      release_notes: %x[#{release_notes_command}]
+    )
+  end
+
+  lane :deploy_socialbike_to_appcenter do |options|
+    appcenter_upload(
+      api_token: ENV['FL_APPCENTER_API_TOKEN'],
+      owner_name: ENV['APPCENTER_USERNAME'],
+      app_name: ENV['ANDROID_SOCIALBIKE_APPCENTER_APP_ID'],
+      apk: ENV['ANDROID_SOCIALBIKE_APK_PATH'],
+      release_notes: %x[#{release_notes_command}]
+    )
+  end
+
+  lane :deploy_goinbike_to_appcenter do |options|
+    appcenter_upload(
+      api_token: ENV['FL_APPCENTER_API_TOKEN'],
+      owner_name: ENV['APPCENTER_USERNAME'],
+      app_name: ENV['ANDROID_GOINBIKE_APPCENTER_APP_ID'],
+      apk: ENV['ANDROID_GOINBIKE_APK_PATH'],
       release_notes: %x[#{release_notes_command}]
     )
   end
