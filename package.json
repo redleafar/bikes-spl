@@ -68,5 +68,7 @@
     "setupFilesAfterEnv": [
       "jest-extended"
     ]
-  }
+  },
+  "runSim":"react-native run-ios --simulator\"iPhone8\" --scheme Bicibogo --configuration Bicibogo.Debug",  
+  "runDevice":"react-native run-ios --device\"iPhone de Rafael\" --scheme Bicibogo --configuration Bicibogo.Debug"  
 }
